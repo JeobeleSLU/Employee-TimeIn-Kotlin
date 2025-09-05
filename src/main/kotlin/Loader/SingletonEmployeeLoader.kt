@@ -5,7 +5,7 @@ import org.group1.BaseClasses.Employee
 import java.io.File
 
 object SingletonEmployeeLoader {
-    private val filePath = "./employees.json"
+    private val filePath = "employees.json"
 
     fun loadEmployees() : ArrayList<Employee> {
         val file = File(filePath)
@@ -16,6 +16,7 @@ object SingletonEmployeeLoader {
         val jsonContent = file.readText()
         val employees: List<Employee> = Json.decodeFromString(jsonContent)
         return ArrayList(employees)
+        println("Employee loaded")
     }
 
 }

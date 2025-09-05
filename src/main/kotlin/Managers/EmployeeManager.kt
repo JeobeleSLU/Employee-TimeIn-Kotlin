@@ -69,8 +69,6 @@ class EmployeeManager {
         return if (timeRecord.timeOut == null) {
             emp.isCheckedIn = true
             emp.lastTimeIn = timeRecord.timeIn
-            emp.timeRecords.add(timeRecord)
-
             "Employee ${emp.name} clocked in at ${timeRecord.timeIn}"
         } else {
             emp.isCheckedIn = false

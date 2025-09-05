@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class TimeLogger {
+    /**
+     * This time logger is implemented in java, to show the interoperability of
+     * Kotlin and java
+     */
     private HashSet<String> employeeInTimeIn = new HashSet<>();
     private Map<String, TimeRecord> timeRecords = new HashMap<>();
 

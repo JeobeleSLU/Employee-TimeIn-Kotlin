@@ -15,8 +15,8 @@ object SingletonEmployeeLoader {
         }
         val jsonContent = file.readText()
         val employees: List<Employee> = Json.decodeFromString(jsonContent)
-        return ArrayList(employees)
         println("Employee loaded")
+        return ArrayList(employees)
     }
 
 }

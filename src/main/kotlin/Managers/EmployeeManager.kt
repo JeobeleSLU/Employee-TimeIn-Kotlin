@@ -88,14 +88,25 @@ class EmployeeManager {
         if (timeRecordsOfEmp == null) {
             return "Employee does not have a record"
         }
+        //Syntactic sugar for StringBuilder in kotlin instead of declaring a string builder
+        //ps love you chat gpt for easier formatting
         val result = buildString {
+            appendLine("Employee: ${emp.name}")
+            appendLine("====================================")
+            appendLine(String.format("%-12s %-10s %-10s", "Date", "Time In", "Time Out"))
+            appendLine("====================================")
+
             timeRecordsOfEmp.forEach { record ->
-                append(record.toString())
-                append("\n")
+                appendLine(String.format("%-12s %-10s %-10s", record.date, record.timeIn, record.timeOut))
             }
         }
         return result
     }
+
+    /**
+     * converts the map into an array and then strings the employee
+     * details in to json format then saves it into a file employees.json
+     */
     fun save() {
         val prettyJson = Json {
             prettyPrint = true

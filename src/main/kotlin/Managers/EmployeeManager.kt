@@ -97,12 +97,16 @@ class EmployeeManager {
         return result
     }
     fun save() {
+        val prettyJson = Json {
+            prettyPrint = true
+            prettyPrintIndent = " "
+        }
+
         var tempEmpList: MutableList<Employee> = mutableListOf()
         for (employee in employeeList.values) {
            tempEmpList.add(employee)
         }
-        val jsonString = Json.encodeToString(tempEmpList)
+        val jsonString = prettyJson.encodeToString(tempEmpList)
         File("employees.json").writeText(jsonString)
     }
-
 }

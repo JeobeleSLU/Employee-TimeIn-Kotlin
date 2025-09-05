@@ -104,7 +104,7 @@ class EmployeeManager {
            tempEmpList.add(employee)
         }
         val jsonString = Json.encodeToString(tempEmpList)
-        File("emplyees.json").writeText(jsonString)
+        File("employees.json").writeText(jsonString)
     }
 
 }
